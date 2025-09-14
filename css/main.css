@@ -1,0 +1,135 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 9rem 3rem;
+}
+
+.hero h1 {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+
+.darkmode .hero h1 {
+    text-shadow: 1px 1px 10px black;
+}
+
+.circles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.circle {
+    position: absolute;
+    border: none;
+    border-radius: 100%;
+}
+
+.circle1 {
+    background-image: linear-gradient(var(--circle-even-color1), var(--circle-even-color2));
+    width: 10rem;
+    height: 10rem;
+    top: 0;
+    left: 0;
+}
+
+.circle2 {
+    width: 15rem;
+    height: 15rem;
+    background-image: linear-gradient(var(--circle-odd-color1), var(--circle-odd-color2));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle3 {
+    background-image: linear-gradient(var(--circle-even-color1), var(--circle-even-color2));
+    width: 10rem;
+    height: 10rem;
+    bottom: 0;
+    right: 0;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin: 1rem;
+}
+
+.about h2 {
+    text-align: center;
+}
+
+.about a {
+    margin: 2rem;
+}
+
+.about a.active {
+    color: var(--text-color);
+}
+
+.projects {
+    margin: min(1.5rem, 2vw);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 3rem 0;
+}
+
+.project a {
+    text-decoration: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--element-bg-color);
+    padding: min(3rem, 5vw);
+    border: none;
+    border-radius: 2rem;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+.content.active {
+    background-color: var(--element-bg-hover);
+}
+
+.content img {
+    width: min(400px, 70vw);
+    border-radius: 2rem;
+    margin: min(1.5rem, 3vw);
+    aspect-ratio: 1.5 / 1;
+    object-fit: cover;
+    box-shadow: 1px 1px 10px black;
+}
+
+.content h2 {
+    margin-bottom: 1rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .content:hover {
+        background-color: var(--element-bg-hover);
+    }
+
+    .about a:hover {
+        color: var(--text-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+}
